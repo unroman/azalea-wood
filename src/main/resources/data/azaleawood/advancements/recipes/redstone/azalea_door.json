@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "azaleawood:azalea_planks"
-            ]
+            "items": "azaleawood:azalea_planks"
           }
         ]
       },

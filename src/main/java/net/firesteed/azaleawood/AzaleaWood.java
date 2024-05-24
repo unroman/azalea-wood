@@ -34,7 +34,7 @@ public class AzaleaWood implements ModInitializer {
 		ModFlammableBlocks.registerFlammableBlocks();
 		ModStrippableBlocks.registerStrippables();
 
-		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+		/*LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
 			if (id.equals(new Identifier("chests/spawn_bonus_chest"))) {
 				AtomicInteger i = new AtomicInteger();
 				tableBuilder.modifyPools(builder -> {
@@ -46,7 +46,7 @@ public class AzaleaWood implements ModInitializer {
 					}
 				});
 			}
-		});
+		});*/
 
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {

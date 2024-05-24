@@ -4,11 +4,11 @@
   "group": "planks",
   "ingredients": [
     {
-      "tag": "minecraft:azalea_logs"
+      "items": "#minecraft:azalea_logs"
     }
   ],
   "result": {
     "count": 4,
-    "item": "azaleawood:azalea_planks"
+    "id": "azaleawood:azalea_planks"
   }
 }

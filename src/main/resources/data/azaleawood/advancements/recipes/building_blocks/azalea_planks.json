@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:azalea_logs"
+            "items": "#minecraft:azalea_logs"
           }
         ]
       },

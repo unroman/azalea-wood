@@ -16,9 +16,9 @@ public class AzaleaWoodClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AZALEA_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AZALEA_TRAPDOOR, RenderLayer.getCutout());
         TerraformBoatClientHelper.registerModelLayers(new Identifier(AzaleaWood.MOD_ID, "azalea"), false);
-        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE,
+        /*SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE,
                 ModBlocks.AZALEA_SIGN.getTexture()));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE,
-                ModBlocks.AZALEA_HANGING_SIGN.getTexture()));
+                ModBlocks.AZALEA_HANGING_SIGN.getTexture()));*/
     }
 }
