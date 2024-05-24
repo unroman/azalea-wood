@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:acacia_planks"
+              "azaleawood:azalea_planks"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:acacia_fence"
+        "recipe": "azaleawood:azalea_fence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:acacia_fence"
+      "azaleawood:azalea_fence"
     ]
   }
 }
