@@ -38,7 +38,12 @@ public class ModItems {
 
     public static void addItemsToItemGroup() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
-            entries.addAfter(Items.MANGROVE_HANGING_SIGN, AZALEA_SIGN);
+            entries.addAfter(Items.CHERRY_HANGING_SIGN, AZALEA_SIGN);
+            entries.addAfter(AZALEA_SIGN, AZALEA_HANGING_SIGN);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+            entries.addAfter(Items.CHERRY_CHEST_BOAT, AZALEA_BOAT);
+            entries.addAfter(AZALEA_BOAT, AZALEA_CHEST_BOAT);
         });
     }
 
