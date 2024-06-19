@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 import static com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry.createKey;
 
 public class ModItems {
-    public static RegistryKey<TerraformBoatType> BOAT_KEY = createKey(new Identifier(AzaleaWood.MOD_ID, "azalea"));
+    public static RegistryKey<TerraformBoatType> BOAT_KEY = createKey(id("azalea"));
 
     public static final Item AZALEA_BOAT = registerItem("azalea_boat",
                         new TerraformBoatItem(BOAT_KEY,
@@ -28,7 +28,7 @@ public class ModItems {
             ModBlocks.AZALEA_HANGING_SIGN, ModBlocks.AZALEA_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(AzaleaWood.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, id(name), item);
     }
 
     public static void addItemsToItemGroup() {
@@ -46,5 +46,9 @@ public class ModItems {
         AzaleaWood.LOGGER.info("Registering Mod Items for " + AzaleaWood.MOD_ID);
 
         addItemsToItemGroup();
+    }
+
+    private static Identifier id(String path) {
+        return Identifier.of(AzaleaWood.MOD_ID, path);
     }
 }

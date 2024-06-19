@@ -1,9 +1,9 @@
 package net.firesteed.azaleawood.block;
 
-import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
-import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.firesteed.azaleawood.AzaleaWood;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -65,48 +65,48 @@ public class ModBlocks {
                         MapColor.RAW_IRON_PINK;})));
 
     public static final TerraformSignBlock AZALEA_SIGN = registerSignBlock("azalea_sign", new TerraformSignBlock(
-            new Identifier(AzaleaWood.MOD_ID, "entity/signs/azalea"),
+            id("entity/signs/azalea"),
             AbstractBlock.Settings.copy(Blocks.OAK_SIGN).mapColor(MapColor.TERRACOTTA_GRAY)));
     public static final TerraformWallSignBlock AZALEA_WALL_SIGN = registerWallSignBlock("azalea_wall_sign",
-            new TerraformWallSignBlock(new Identifier(AzaleaWood.MOD_ID, "entity/signs/azalea"),
+            new TerraformWallSignBlock(id("entity/signs/azalea"),
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN).dropsLike(AZALEA_SIGN)
                     .mapColor(MapColor.TERRACOTTA_GRAY)));
     public static final TerraformHangingSignBlock AZALEA_HANGING_SIGN = registerHangingSignBlock(
             "azalea_hanging_sign", new TerraformHangingSignBlock(
-            new Identifier(AzaleaWood.MOD_ID, "entity/signs/hanging/azalea"),
-            new Identifier(AzaleaWood.MOD_ID, "textures/gui/hanging_signs/azalea"),
+            id("entity/signs/hanging/azalea"),
+            id("textures/gui/hanging_signs/azalea"),
                     AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).mapColor(MapColor.TERRACOTTA_GRAY)));
     public static final TerraformWallHangingSignBlock AZALEA_WALL_HANGING_SIGN = registerWallHangingSignBlock(
             "azalea_wall_hanging_sign", new TerraformWallHangingSignBlock(
-            new Identifier(AzaleaWood.MOD_ID, "entity/signs/hanging/azalea"),
-            new Identifier(AzaleaWood.MOD_ID, "textures/gui/hanging_signs/azalea"),
+            id("entity/signs/hanging/azalea"),
+            id("textures/gui/hanging_signs/azalea"),
                     AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN).dropsLike(AZALEA_HANGING_SIGN)
                     .mapColor(MapColor.TERRACOTTA_GRAY)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(AzaleaWood.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
 
     private static TerraformSignBlock registerSignBlock(String name, TerraformSignBlock block) {
-        return Registry.register(Registries.BLOCK, new Identifier(AzaleaWood.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
 
     private static TerraformWallSignBlock registerWallSignBlock(String name, TerraformWallSignBlock block) {
-        return Registry.register(Registries.BLOCK, new Identifier(AzaleaWood.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
 
     private static TerraformHangingSignBlock registerHangingSignBlock(String name, TerraformHangingSignBlock block) {
-        return Registry.register(Registries.BLOCK, new Identifier(AzaleaWood.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
 
     private static TerraformWallHangingSignBlock registerWallHangingSignBlock(String name,
                                                                               TerraformWallHangingSignBlock block) {
-        return Registry.register(Registries.BLOCK, new Identifier(AzaleaWood.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, id(name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        Item item = Registry.register(Registries.ITEM, new Identifier(AzaleaWood.MOD_ID, name),
+        Item item = Registry.register(Registries.ITEM, id(name),
                 new BlockItem(block, new Item.Settings()));
 
         return item;
@@ -114,5 +114,9 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         AzaleaWood.LOGGER.debug("Registering ModBlocks for " + AzaleaWood.MOD_ID);
+    }
+
+    private static Identifier id(String path) {
+        return Identifier.of(AzaleaWood.MOD_ID, path);
     }
 }
